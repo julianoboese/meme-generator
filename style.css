@@ -23,8 +23,22 @@
 
 #meme-text {
   position: absolute;
+  left: 10px;
+  bottom: 10px;
   z-index: 1;
   text-shadow: 5px 5px 5px black;
   font-size: 30px;
   color: white;
+}
+
+#fire {
+  background-color: red;
+}
+
+#water {
+  background-color: blue;
+}
+
+#earth {
+  background-color: green;
 }
