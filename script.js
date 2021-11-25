@@ -1,4 +1,5 @@
 const container = document.getElementById('meme-image-container');
+const imgOutput = document.getElementById('meme-image');
 
 function textInsert() {
   const textInput = document.getElementById('text-input');
@@ -15,6 +16,21 @@ function borderSpecs(width, style, color) {
   container.style.borderColor = color;
 }
 
+function imgInsert() {
+  const imgInput = document.getElementById('meme-insert');
+  imgInput.addEventListener('change', (event) => {
+    /** Utilizei o código abaixo para inserir a imagem selecionada
+     * Source: https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded/27165977#27165977
+     */
+    imgOutput.src = URL.createObjectURL(event.target.files[0]);
+    imgOutput.onload = () => {
+      URL.revokeObjectURL(imgOutput.src);
+    };
+  });
+}
+
+imgInsert();
+
 function changeBorder() {
   const fireButton = document.getElementById('fire');
   const waterButton = document.getElementById('water');
@@ -25,3 +41,18 @@ function changeBorder() {
 }
 
 changeBorder();
+
+function imgSelect() {
+  const memeImgs = document.getElementById('memes-pre-prontos').children;
+  for (let i = 0; i < memeImgs.length; i += 1) {
+    memeImgs[i].addEventListener('click', (event) => {
+      console.log(memeImgs[i]);
+      imgOutput.src = event.target.src;
+      imgOutput.onload = () => {
+        URL.revokeObjectURL(imgOutput.src);
+      };
+    });
+  }
+}
+
+imgSelect();
