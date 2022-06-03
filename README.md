@@ -1,5 +1,5 @@
 # Meme Generator
-Projeto da [Trybe](https://www.betrybe.com/) - Bloco 5 - Aplicação para geração de memes feita com HTML, CSS e Javascript.
+Projeto da [Trybe](https://www.betrybe.com/) - Bloco 5 - Aplicação para geração de memes feita com HTML, CSS e JavaScript.
 
 ## 💻 Projeto
 
